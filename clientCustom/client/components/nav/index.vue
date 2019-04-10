@@ -5,24 +5,16 @@
       <div class="collapse navbar-collapse justify-content-end">
         <ul class="navbar-nav">
           <li v-if="username">
-            <a href="/auth/profile" class="nav-link">
-              Hello {{ username }}
-            </a>
+            <a href="/auth/profile" class="nav-link">Hello {{ username }}</a>
           </li>
           <li v-if="username">
-            <a href="/home" class="nav-link" @click="logout">
-              Logout
-            </a>
+            <a href="/home" class="nav-link" @click="logout">Logout</a>
           </li>
           <li v-if="!username">
-            <router-link v-if="!username" tag="a" class="nav-link" to="/signin" exact>
-              Signin
-            </router-link>
+            <router-link v-if="!username" tag="a" class="nav-link" to="/signin" exact>Signin</router-link>
           </li>
           <li v-if="!username">
-            <router-link v-if="!username" tag="a" class="nav-link" to="/signup" exact>
-              Signup
-            </router-link>
+            <router-link v-if="!username" tag="a" class="nav-link" to="/signup" exact>Signup</router-link>
           </li>
         </ul>
       </div>
@@ -31,17 +23,20 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations } from "vuex";
 export default {
   computed: {
     username() {
-      return this.$store.getters['auth/username']
+      return this.$store.getters["auth/username"];
     }
   },
   methods: {
     ...mapMutations({
-      logout: 'auth/logout'
+      logout: "auth/logout"
     })
   }
-}
+};
 </script>
+<style scoped>
+
+</style>

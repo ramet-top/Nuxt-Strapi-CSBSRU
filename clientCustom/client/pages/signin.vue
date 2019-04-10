@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Hi</h3>
+    <!-- <h3>Hi</h3> -->
     <Signin/>
   </div>
 </template>

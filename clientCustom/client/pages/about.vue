@@ -1,12 +1,12 @@
 <template>
     <div>
-            Home page
+        This about page
     </div>
 </template>
 
 <script>
     export default {
-        
+
     }
 </script>
 
