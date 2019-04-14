@@ -41,8 +41,23 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    // *************************************************@nuxtjs/bootstrap-vue
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
+
+     // Simple usage
+    //  '@nuxtjs/bootstrap-vue',
+    
+     // With options
+    //  ['@nuxtjs/bootstrap-vue', { css: false }],
+
+    // **************************************************nuxt-buefy
+      // Simple usage
+      'nuxt-buefy',
+
+      // Or you can customize
+      // ['nuxt-buefy', { css: false, materialDesignIcons: false }],
+  
+    
   ],
 
   /*
