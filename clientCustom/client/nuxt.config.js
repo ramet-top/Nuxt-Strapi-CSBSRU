@@ -11,13 +11,13 @@ export default {
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      // { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [{ src: 'https://js.stripe.com/v3' }]
+    // link: [
+    //   { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    // ],
+    // script: [{ src: 'https://js.stripe.com/v3' }]
   },
 
   /*
@@ -41,23 +41,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // *************************************************@nuxtjs/bootstrap-vue
     // Doc: https://bootstrap-vue.js.org/docs/
-
-     // Simple usage
-    //  '@nuxtjs/bootstrap-vue',
-    
-     // With options
-    //  ['@nuxtjs/bootstrap-vue', { css: false }],
-
-    // **************************************************nuxt-buefy
-      // Simple usage
-      'nuxt-buefy',
-
-      // Or you can customize
-      // ['nuxt-buefy', { css: false, materialDesignIcons: false }],
-  
-    
+    // 'bootstrap-vue/nuxt',
   ],
 
   /*

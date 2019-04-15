@@ -1,7 +1,7 @@
 <template>
   <section class="container">
-    <!-- <div class="col-md-6 offset-md-3 mt-3">
-      <form autocomplete="on" @submit.stop.prevent="handleSubmit">
+    <div class="col-md-6 offset-md-3 mt-3">
+      <form autocomplete="off" @submit.stop.prevent="handleSubmit">
         <div class="form-group">
           <label for="email">Email</label>
           <b-form-input
@@ -32,68 +32,7 @@
           <router-link :to="{ name: 'signup'}" tag="a">Register</router-link>
         </p>
       </form>
-    </div>-->
-
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half">
-        <!-- <p class="bd-notification is-primary">
-          <code class="html">is-half</code>
-          <br>
-        </p>-->
-        <form autocomplete="on" @submit.stop.prevent="handleSubmit">
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-              <input
-                class="input"
-                type="email"
-                placeholder="Email"
-                autofocus="true"
-                v-model="email"
-                id="email"
-                required
-              >
-              <span class="icon is-small is-left">
-                <b-icon icon="account"></b-icon>
-              </span>
-              <span class="icon is-small is-right">
-                <!-- <i class="fas fa-check"></i> -->
-                <b-icon icon="check"></b-icon>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control has-icons-left">
-              <input
-                class="input"
-                type="password"
-                placeholder="Password"
-                autofocus="true"
-                id="password"
-                v-model="password"
-                required
-              >
-              <span class="icon is-small is-left">
-                <!-- <i class="fas fa-lock"></i> -->
-                <b-icon icon="lock"></b-icon>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control">
-              <button class="button is-success button is-fullwidth is-medium" :disabled="loading">Login</button>
-            </p>
-          </div>
-        </form>
-      </div>
     </div>
-
-    <!-- <div class="columns is-1 is-centered">
-      <div class="column">No gap</div>
-      <div class="column is-centered">
-      
-      </div>
-      <div class="column">No gap</div>
-    </div>-->
   </section>
 </template>
 

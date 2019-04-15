@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <h1>Vision page</h1>
     <div>
       <b-carousel
