@@ -73,7 +73,7 @@
               class="nav-link border border-light rounded"
               target="_blank"
             >
-              <i class="fab fa-github mr-2"></i>MDB GitHub
+              <i class="fab fa-github mr-2"></i>Login
             </a>
           </li>
         </ul>
