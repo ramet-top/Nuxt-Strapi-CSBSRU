@@ -5,16 +5,17 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "host": "127.0.0.1",
-        "srv": false,
-        "port": 27017,
+        "uri": "",
+        "host": "testcluster0-nhxxh.mongodb.net",
+        "srv": true,
+        
         "database": "server",
-        "username": "",
-        "password": ""
+        "username": "admin",
+        "password": "admin"
       },
       "options": {
-        "authenticationDatabase": "",
-        "ssl": false
+        "ssl": "true",
+        "authenticationDatabase": "admin"
       }
     }
   }
