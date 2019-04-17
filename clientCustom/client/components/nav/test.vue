@@ -1,10 +1,11 @@
 <template>
-  <!-- Navbar -->
+ <div>
+  <!-- Navbar -->  
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
       <!-- Brand -->
       <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-        <strong>MDB</strong>
+       <img src="https://img.icons8.com/ios/50/000000/graduation-cap.png" class="mr-2"><strong>MDB Computer science</strong>
       </a>
 
       <!-- Collapse -->
@@ -79,8 +80,9 @@
         </ul>
       </div>
     </div>
-  </nav>
-  <!-- Navbar -->
+  </nav>  
+  <!-- Navbar --> 
+  </div>
 </template>
 
 <script>

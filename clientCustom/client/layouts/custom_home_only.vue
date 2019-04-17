@@ -1,8 +1,8 @@
 <template>
   <div >
     <Header/>
-    <Vdo/>
-    <main>
+    <!-- <Vdo/> -->
+    <main class="mt-5 pt-5">
       <div> <!-- defalt use class="container" -->
         <nuxt/>
       </div>

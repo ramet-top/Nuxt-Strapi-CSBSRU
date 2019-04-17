@@ -935,7 +935,8 @@
 
 <script>
 export default {
-  layout: "lay"
+  layout: "lay",
+  // layout:"custom"
 };
 </script>
 
