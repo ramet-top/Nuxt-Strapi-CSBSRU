@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Header from '~/components/nav/test.vue'
+import Header from '~/components/nav/'
 import Vdo from '~/components/nav/carousel.vue'
 import Footer from "~/components/footer"
 export default {

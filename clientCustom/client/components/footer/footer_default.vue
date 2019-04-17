@@ -1,4 +1,5 @@
 <template>
+<div class="fixed-bottom">
     <!-- Footer-->
     <footer class="page-footer text-center font-small mt-4 wow fadeIn ">
         <!--Call to action-->
@@ -62,7 +63,8 @@
         </div>
         <!--/.Copyright-->
     </footer>
-    <!--/.Footer -->    
+    <!--/.Footer -->
+    </div>
 </template>
 
 <script>

@@ -4,7 +4,7 @@
     <div class="container">
       <!-- Brand -->
       <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-       <i class="fas fa-graduation-cap mr-2"></i></i><strong>MDB Computer science</strong>
+       <i class="fas fa-graduation-cap mr-2"></i><strong>MDB Computer science</strong>
       </a>
 
       <!-- Collapse -->
@@ -94,5 +94,6 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
+
 </style>
