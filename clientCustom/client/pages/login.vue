@@ -1,16 +1,14 @@
-<template>
-  <div>
+<template>  
     <!-- <h3>Hi</h3> -->
-    <Signin/>
-  </div>
+    <Login/>  
 </template>
 
 <script>
-import Signin from "~/components/auth/signin.vue";
+import Login from "~/components/auth/login.vue";
 
 export default {
   components: {
-    Signin
+    Login
   }
 };
 </script>

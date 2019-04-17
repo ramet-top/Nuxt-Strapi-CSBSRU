@@ -1,11 +1,10 @@
 <template>
- <div>
   <!-- Navbar -->  
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
       <!-- Brand -->
       <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-       <img src="https://img.icons8.com/ios/50/000000/graduation-cap.png" class="mr-2"><strong>MDB Computer science</strong>
+       <i class="fas fa-graduation-cap mr-2"></i></i><strong>MDB Computer science</strong>
       </a>
 
       <!-- Collapse -->
@@ -26,67 +25,73 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home
+            <nuxt-link to="/" class="nav-link">หน้าหลัก<span class="sr-only">(current)</span></nuxt-link> 
+            <!-- <a class="nav-link" href="/">
+              หน้าหลัก
               <span class="sr-only">(current)</span>
-            </a>
+            </a> -->
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://mdbootstrap.com/docs/jquery/"
-              target="_blank"
-            >About MDB</a>
+            <nuxt-link to="/course" class="nav-link">หลักสูตร</nuxt-link>  
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-              target="_blank"
-            >
-              Free
-              download
-            </a>
+            <nuxt-link to="news" class="nav-link">ข่าวประกาศ</nuxt-link>             
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">
-              Free
-              tutorials
-            </a>
-          </li>
+             <nuxt-link to="/about" class="nav-link">ติดต่อ</nuxt-link>             
+          </li>          
         </ul>
 
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
-              <i class="fab fa-facebook-f"></i>
+            <a href=" https://www.facebook.com/ComputerScienceBsru/" class="nav-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>              
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+            <a href="#" class="nav-link" target="_blank">
               <i class="fab fa-twitter"></i>
             </a>
           </li>
-          <li class="nav-item">
-            <a
-              href="https://github.com/mdbootstrap/bootstrap-material-design"
-              class="nav-link border border-light rounded"
-              target="_blank"
-            >
-              <i class="fab fa-github mr-2"></i>Login
-            </a>
+          <!-- not auth -->
+          <li class="nav-item" v-if="!username">         
+              <nuxt-link to="/login" class="nav-link border border-light rounded" tag="a"><i class="fab fa-500px mr-2"/>Login</nuxt-link>          
+          </li>
+
+          <!--auth -->
+          <li class="nav-item dropdown" v-if="username">
+              <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <i class="fas fa-user"></i> Profile </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                  <!-- <a class="dropdown-item waves-effect waves-light" href="#">My account</a> -->
+                  <nuxt-link to="/auth/profile" class="dropdown-item waves-effect waves-light" tag="a">My account</nuxt-link> 
+
+                  <!-- <a class="dropdown-item waves-effect waves-light" href="#">Log out</a> -->
+                  <nuxt-link to="/" class="dropdown-item waves-effect waves-light" @click="logout" tag="a">Logout</nuxt-link> 
+              </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>  
   <!-- Navbar --> 
-  </div>
 </template>
 
 <script>
-export default {};
+import { mapMutations } from "vuex";
+export default {
+   computed: {
+    username() {
+      return this.$store.getters["auth/username"];
+    }
+  },
+  methods: {
+    ...mapMutations({
+      logout: "auth/logout"
+    })
+  }
+};
 </script>
 
 <style>
