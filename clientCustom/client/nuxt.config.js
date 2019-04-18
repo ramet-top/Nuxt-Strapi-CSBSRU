@@ -20,9 +20,9 @@ export default {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' },
 
       // default template unknown version
-      // { rel: 'stylesheet', href: 'mdb_vdo_template/css/bootstrap.min.css' },
-      // { rel: 'stylesheet', href: 'mdb_vdo_template/css/mdb.min.css' },
-      { rel: 'stylesheet', href: 'mdb_vdo_template/css/style.min.css' },     
+      // { rel: 'stylesheet', href: 'mdb_vdo_template/css/bootstrap.min.css'},
+      // { rel: 'stylesheet', href: 'mdb_vdo_template/css/mdb.min.css'},
+      { rel: 'stylesheet', href: 'mdb_vdo_template/css/style.min.css'},     
       
       // // Bootstrap core CSS
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css' },

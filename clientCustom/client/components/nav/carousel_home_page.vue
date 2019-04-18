@@ -18,7 +18,8 @@
 
                   <!--Video source-->
                   <video class="video-intro" autoplay loop muted>
-                      <source src="https://mdbootstrap.com/img/video/city.mp4" type="video/mp4">
+                      <!-- <source src="https://mdbootstrap.com/img/video/city.mp4" type="video/mp4"> -->
+                      <source src="~/assets/vdo/homepage/city.mp4" type="video/mp4">                      
                   </video>
 
                   <!-- Mask & flexbox options-->
@@ -41,11 +42,10 @@
                                   available. Create your own, stunning website.</strong>
                           </p>
 
-                          <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
-                              class="btn btn-outline-white btn-lg">Start
-                              free tutorial
-                              <i class="fas fa-graduation-cap ml-2"></i>
-                          </a>
+                           <nuxt-link to="/login" class="btn btn-outline-white btn-lg">
+                            Start
+                            <i class="fas fa-graduation-cap ml-2"></i>
+                          </nuxt-link>
                       </div>
                       <!-- Content -->
 
@@ -62,7 +62,8 @@
 
                   <!--Video source-->
                   <video class="video-intro" autoplay loop muted>
-                      <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4">
+                      <!-- <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4"> -->
+                       <source src="~/assets/vdo/homepage/forest.mp4" type="video/mp4">   
                   </video>
 
                   <!-- Mask & flexbox options-->
@@ -85,11 +86,10 @@
                                   available. Create your own, stunning website.</strong>
                           </p>
 
-                          <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
-                              class="btn btn-outline-white btn-lg">Start
-                              free tutorial
-                              <i class="fas fa-graduation-cap ml-2"></i>
-                          </a>
+                          <nuxt-link to="/login" class="btn btn-outline-white btn-lg">
+                            Start
+                            <i class="fas fa-graduation-cap ml-2"></i>
+                          </nuxt-link>
                       </div>
                       <!-- Content -->
 
@@ -106,7 +106,8 @@
 
                   <!--Video source-->
                   <video class="video-intro" autoplay loop muted>
-                      <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4">
+                      <!-- <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4"> -->
+                      <source src="~/assets/vdo/homepage/Tropical.mp4" type="video/mp4">   
                   </video>
 
                   <!-- Mask & flexbox options-->
@@ -129,11 +130,10 @@
                                   available. Create your own, stunning website.</strong>
                           </p>
 
-                          <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
-                              class="btn btn-outline-white btn-lg">Start
-                              free tutorial
-                              <i class="fas fa-graduation-cap ml-2"></i>
-                          </a>
+                           <nuxt-link to="/login" class="btn btn-outline-white btn-lg">
+                            Start
+                            <i class="fas fa-graduation-cap ml-2"></i>
+                          </nuxt-link>
                       </div>
                       <!-- Content -->
 

@@ -31,7 +31,7 @@
                     <!--Card content-->
                     <div class="card-body">
                       <!-- Form -->
-                      <form autocomplete="off" @submit.stop.prevent="handleSubmit">
+                      <form autocomplete="on" @submit.stop.prevent="handleSubmit">
                         <!-- Heading -->
                         <h3 class="dark-grey-text text-center">
                           <strong>Login Now</strong>
@@ -76,7 +76,7 @@
                           <button class="btn btn-outline-info btn-lg btn-block waves-effect mt-2" :disabled="loading" type="submit" > <strong>Login</strong></button>
                           <p class="text-center mt-3">
                               No account yet
-                              <router-link :to="{ name: 'signup'}" tag="a">Register</router-link>
+                              <router-link :to="{ name: 'register'}" tag="a">Register</router-link>
                           </p>
                           <hr>                         
                         </div>
@@ -115,8 +115,7 @@ import Strapi from "strapi-sdk-javascript/build/main";
 const apiUrl = process.env.API_URL || "http://localhost:1337";
 const strapi = new Strapi(apiUrl);
 import { mapMutations } from "vuex";
-export default {
-  name: "sigin",
+export default {  
   data() {
     return {
       email: "",

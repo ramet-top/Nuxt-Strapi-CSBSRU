@@ -4,7 +4,7 @@
     <div class="container">
       <!-- Brand -->
       <a class="navbar-brand" href="/">
-       <i class="fas fa-graduation-cap mr-2"></i><strong>MDB Computer science</strong>
+       <i class="fas fa-graduation-cap mr-2"></i><strong>Computer science</strong>
       </a>
 
       <!-- Collapse -->
@@ -60,15 +60,17 @@
           </li>
 
           <!--auth -->
-          <li class="nav-item dropdown" v-if="username">
+          <li class="nav-item dropdown" v-if="username" >
               <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <i class="fas fa-user"></i> Profile </a>
+                  <i class="fas fa-user"></i> {{ username }} </a>
               <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                   <!-- <a class="dropdown-item waves-effect waves-light" href="#">My account</a> -->
                   <nuxt-link to="/auth/profile" class="dropdown-item waves-effect waves-light" tag="a">My account</nuxt-link> 
+                  <nuxt-link to="/auth/document" class="dropdown-item waves-effect waves-light" tag="a">Document</nuxt-link> 
+                  <nuxt-link to="/auth/report" class="dropdown-item waves-effect waves-light" tag="a">Report & Download</nuxt-link>     
 
                   <!-- <a class="dropdown-item waves-effect waves-light" href="#">Log out</a> -->
-                  <nuxt-link to="/" class="dropdown-item waves-effect waves-light" @click="logout" tag="a">Logout</nuxt-link> 
+                  <a href="/" class="dropdown-item waves-effect waves-light" @click="logout">Logout</a> 
               </div>
           </li>
         </ul>
@@ -81,6 +83,11 @@
 <script>
 import { mapMutations } from "vuex";
 export default {
+  data() {
+    return {
+      active: false
+    }
+  },
    computed: {
     username() {
       return this.$store.getters["auth/username"];
@@ -89,7 +96,10 @@ export default {
   methods: {
     ...mapMutations({
       logout: "auth/logout"
-    })
+    }),
+    mouseOver: function(){
+            this.active = !this.active;   
+        }
   }
 };
 </script>
