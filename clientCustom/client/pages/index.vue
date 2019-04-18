@@ -6,7 +6,7 @@
 <script>
   import Content from "~/components/content";
   export default {
-    layout:'custom_home_only',
+    layout:'layout_home_only',
     components:{
       Content
     }

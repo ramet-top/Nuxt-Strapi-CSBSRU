@@ -1,5 +1,5 @@
 <template>
-<div class="fixed-bottom">
+<div>
     <!-- Footer-->
     <footer class="page-footer text-center font-small mt-4 wow fadeIn ">
         <!--Call to action-->
