@@ -1,6 +1,6 @@
 <template>
     <!-- Footer-->
-    <footer class="page-footer text-center font-small mt-4 wow fadeIn ">
+    <footer class="page-footer text-center font-small wow fadeIn ">
         <!--Call to action-->
         <div class="pt-4">
             <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"

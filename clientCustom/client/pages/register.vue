@@ -1,12 +1,8 @@
-<template>
-  <div>
+<template> 
     <Signup/>
-  </div>
 </template>
-
 <script>
 import Signup from "~/components/auth/signup.vue";
-
 export default {
   components: {
     Signup

@@ -7,18 +7,18 @@
         <nuxt/>
       </div>
     </main>    
-    <Footer/>
+    <!-- <Footer/> -->
   </div>
 </template>
 
 <script>
 import Header from '~/components/nav/'
 import Vdo from '~/components/nav/carousel_login_page.vue'
-import Footer from "~/components/footer"
+// import Footer from "~/components/footer"
 export default {
   components: {
     Header,
-    Footer,
+    // Footer,
     Vdo
   }
 };

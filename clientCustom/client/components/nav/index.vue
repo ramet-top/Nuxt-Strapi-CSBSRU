@@ -3,7 +3,7 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark dark scrolling-navbar">
     <div class="container">
       <!-- Brand -->
-      <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+      <a class="navbar-brand" href="/">
        <i class="fas fa-graduation-cap mr-2"></i><strong>MDB Computer science</strong>
       </a>
 
@@ -32,7 +32,7 @@
             </a> -->
           </li>
           <li class="nav-item">
-            <nuxt-link to="/course" class="nav-link">หลักสูตร</nuxt-link>  
+            <nuxt-link to="/course" class="nav-link ">หลักสูตร</nuxt-link>  
           </li>
           <li class="nav-item">
             <nuxt-link to="news" class="nav-link">ข่าวประกาศ</nuxt-link>             
