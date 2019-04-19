@@ -1,11 +1,14 @@
 <template> 
-    <Signup/>
+    <!-- <Signup/> -->
+    <Register/>
 </template>
 <script>
-import Signup from "~/components/auth/signup.vue";
+// import Signup from "~/components/auth/signup.vue"
+import Register from "~/components/auth/register.vue"
+
 export default {
   components: {
-    Signup
+    Register
   }
 };
 </script>
