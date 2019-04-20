@@ -205,7 +205,7 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dish | createDishPayload | updateDishPayload | deleteDishPayload | DishConnection | DishAggregator | DishAggregatorSum | DishAggregatorAvg | DishAggregatorMin | DishAggregatorMax | DishGroupBy | DishConnection_id | DishConnectionCreatedAt | DishConnectionUpdatedAt | DishConnectionName | DishConnectionDescription | DishConnectionImage | DishConnectionPrice | DishConnectionRestaurant | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionCreatedAt | OrderConnectionUpdatedAt | OrderConnectionAddress | OrderConnectionCity | OrderConnectionDishes | OrderConnectionAmount | OrderConnectionPostalCode | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionCreatedAt | RestaurantConnectionUpdatedAt | RestaurantConnectionName | RestaurantConnectionDescription | RestaurantConnectionImage | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dish | createDishPayload | updateDishPayload | deleteDishPayload | DishConnection | DishAggregator | DishAggregatorSum | DishAggregatorAvg | DishAggregatorMin | DishAggregatorMax | DishGroupBy | DishConnection_id | DishConnectionCreatedAt | DishConnectionUpdatedAt | DishConnectionName | DishConnectionDescription | DishConnectionImage | DishConnectionPrice | DishConnectionRestaurant | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionCreatedAt | OrderConnectionUpdatedAt | OrderConnectionAddress | OrderConnectionCity | OrderConnectionDishes | OrderConnectionAmount | OrderConnectionPostalCode | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionCreatedAt | RestaurantConnectionUpdatedAt | RestaurantConnectionName | RestaurantConnectionDescription | RestaurantConnectionImage | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionStatus
 
 type Mutation {
   createDish(input: createDishInput): createDishPayload
@@ -580,6 +580,12 @@ type UploadFileGroupBy {
   public_id: [UploadFileConnectionPublic_id]
 }
 
+enum USER {
+  accessUser
+  accessProfessor
+  accessAdmin
+}
+
 input UserInput {
   username: String!
   email: String!
@@ -587,6 +593,7 @@ input UserInput {
   confirmed: Boolean
   blocked: Boolean
   role: ID
+  status: USER!
 }
 
 type UsersPermissionsMe {
@@ -669,6 +676,7 @@ type UsersPermissionsUser {
   confirmed: Boolean
   blocked: Boolean
   role: UsersPermissionsRole
+  status: USER!
 }
 
 type UsersPermissionsUserAggregator {
@@ -711,6 +719,11 @@ type UsersPermissionsUserConnectionRole {
   connection: UsersPermissionsUserConnection
 }
 
+type UsersPermissionsUserConnectionStatus {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
 type UsersPermissionsUserConnectionUsername {
   key: String
   connection: UsersPermissionsUserConnection
@@ -724,4 +737,5 @@ type UsersPermissionsUserGroupBy {
   confirmed: [UsersPermissionsUserConnectionConfirmed]
   blocked: [UsersPermissionsUserConnectionBlocked]
   role: [UsersPermissionsUserConnectionRole]
+  status: [UsersPermissionsUserConnectionStatus]
 }

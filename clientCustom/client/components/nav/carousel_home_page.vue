@@ -1,176 +1,168 @@
 <template>
   <!--Carousel Wrapper-->
   <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-      <!--Indicators-->
-      <ol class="carousel-indicators">
-          <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-          <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-      </ol>
-      <!--/.Indicators-->
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
 
-      <!--Slides-->
-      <div class="carousel-inner vh-100" role="listbox">
+    <!--Slides-->
+    <div class="carousel-inner vh-100" role="listbox">
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="view">
+          <!--Video source-->
+          <video class="video-intro" autoplay loop muted>
+            <!-- <source src="https://mdbootstrap.com/img/video/city.mp4" type="video/mp4"> -->
+            <source src="~/assets/vdo/homepage/city.mp4" type="video/mp4">
+          </video>
 
-          <!--First slide-->
-          <div class="carousel-item active">
-              <div class="view ">
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+              <h1 class="mb-4">
+                <strong>Bootstrap 4 with MDB Computer science</strong>
+              </h1>
 
-                  <!--Video source-->
-                  <video class="video-intro" autoplay loop muted>
-                      <!-- <source src="https://mdbootstrap.com/img/video/city.mp4" type="video/mp4"> -->
-                      <source src="~/assets/vdo/homepage/city.mp4" type="video/mp4">                      
-                  </video>
+              <p>
+                <strong>Best & free guide of responsive web design</strong>
+              </p>
 
-                  <!-- Mask & flexbox options-->
-                  <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+              <p class="mb-4 d-none d-md-block">
+                <strong>
+                  The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000
+                  users. Video and
+                  written versions
+                  available. Create your own, stunning website.
+                </strong>
+              </p>
 
-                      <!-- Content -->
-                      <div class="text-center white-text mx-5 wow fadeIn">
-                          <h1 class="mb-4">
-                              <strong>Bootstrap 4 with MDB Computer science </strong>
-                          </h1>
-
-                          <p>
-                              <strong>Best & free guide of responsive web design</strong>
-                          </p>
-
-                          <p class="mb-4 d-none d-md-block">
-                              <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000
-                                  users. Video and
-                                  written versions
-                                  available. Create your own, stunning website.</strong>
-                          </p>
-
-                           <nuxt-link to="/login" class="btn btn-outline-white btn-lg">
-                            Start
-                            <i class="fas fa-graduation-cap ml-2"></i>
-                          </nuxt-link>
-                      </div>
-                      <!-- Content -->
-
-                  </div>
-                  <!-- Mask & flexbox options-->
-
-              </div>
+              <nuxt-link v-if="!username" to="/login" class="btn btn-outline-white btn-lg">
+                Start
+                <i class="fas fa-graduation-cap ml-2"></i>
+              </nuxt-link>
+            </div>
+            <!-- Content -->
           </div>
-          <!--/First slide-->
-
-          <!--Second slide-->
-          <div class="carousel-item">
-              <div class="view">
-
-                  <!--Video source-->
-                  <video class="video-intro" autoplay loop muted>
-                      <!-- <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4"> -->
-                       <source src="~/assets/vdo/homepage/forest.mp4" type="video/mp4">   
-                  </video>
-
-                  <!-- Mask & flexbox options-->
-                  <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-
-                      <!-- Content -->
-                      <div class="text-center white-text mx-5 wow fadeIn">
-                          <h1 class="mb-4">
-                              <strong>Bootstrap 4 with MDB Computer science</strong>
-                          </h1>
-
-                          <p>
-                              <strong>Best & free guide of responsive web design</strong>
-                          </p>
-
-                          <p class="mb-4 d-none d-md-block">
-                              <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000
-                                  users. Video and
-                                  written versions
-                                  available. Create your own, stunning website.</strong>
-                          </p>
-
-                          <nuxt-link to="/login" class="btn btn-outline-white btn-lg">
-                            Start
-                            <i class="fas fa-graduation-cap ml-2"></i>
-                          </nuxt-link>
-                      </div>
-                      <!-- Content -->
-
-                  </div>
-                  <!-- Mask & flexbox options-->
-
-              </div>
-          </div>
-          <!--/Second slide-->
-
-          <!--Third slide-->
-          <div class="carousel-item">
-              <div class="view">
-
-                  <!--Video source-->
-                  <video class="video-intro" autoplay loop muted>
-                      <!-- <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4"> -->
-                      <source src="~/assets/vdo/homepage/Tropical.mp4" type="video/mp4">   
-                  </video>
-
-                  <!-- Mask & flexbox options-->
-                  <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-
-                      <!-- Content -->
-                      <div class="text-center white-text mx-5 wow fadeIn">
-                          <h1 class="mb-4">
-                              <strong>Bootstrap 4 with MDB Computer science</strong>
-                          </h1>
-
-                          <p>
-                              <strong>Best & free guide of responsive web design</strong>
-                          </p>
-
-                          <p class="mb-4 d-none d-md-block">
-                              <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000
-                                  users. Video and
-                                  written versions
-                                  available. Create your own, stunning website.</strong>
-                          </p>
-
-                           <nuxt-link to="/login" class="btn btn-outline-white btn-lg">
-                            Start
-                            <i class="fas fa-graduation-cap ml-2"></i>
-                          </nuxt-link>
-                      </div>
-                      <!-- Content -->
-
-                  </div>
-                  <!-- Mask & flexbox options-->
-
-              </div>
-          </div>
-          <!--/Third slide-->
-
+          <!-- Mask & flexbox options-->
+        </div>
       </div>
-      <!--/.Slides-->
+      <!--/First slide-->
 
-      <!--Controls-->
-      <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-      </a>
-      <!--/.Controls-->      
+      <!--Second slide-->
+      <div class="carousel-item">
+        <div class="view">
+          <!--Video source-->
+          <video class="video-intro" autoplay loop muted>
+            <!-- <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4"> -->
+            <source src="~/assets/vdo/homepage/forest.mp4" type="video/mp4">
+          </video>
+
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+              <h1 class="mb-4">
+                <strong>Bootstrap 4 with MDB Computer science</strong>
+              </h1>
+
+              <p>
+                <strong>Best & free guide of responsive web design</strong>
+              </p>
+
+              <p class="mb-4 d-none d-md-block">
+                <strong>
+                  The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000
+                  users. Video and
+                  written versions
+                  available. Create your own, stunning website.
+                </strong>
+              </p>
+
+              <nuxt-link v-if="!username" to="/login" class="btn btn-outline-white btn-lg">
+                Start
+                <i class="fas fa-graduation-cap ml-2"></i>
+              </nuxt-link>
+            </div>
+            <!-- Content -->
+          </div>
+          <!-- Mask & flexbox options-->
+        </div>
+      </div>
+      <!--/Second slide-->
+
+      <!--Third slide-->
+      <div class="carousel-item">
+        <div class="view">
+          <!--Video source-->
+          <video class="video-intro" autoplay loop muted>
+            <!-- <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4"> -->
+            <source src="~/assets/vdo/homepage/Tropical.mp4" type="video/mp4">
+          </video>
+
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+              <h1 class="mb-4">
+                <strong>Bootstrap 4 with MDB Computer science</strong>
+              </h1>
+
+              <p>
+                <strong>Best & free guide of responsive web design</strong>
+              </p>
+
+              <p class="mb-4 d-none d-md-block">
+                <strong>
+                  The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000
+                  users. Video and
+                  written versions
+                  available. Create your own, stunning website.
+                </strong>
+              </p>
+
+              <nuxt-link v-if="!username" to="/login" class="btn btn-outline-white btn-lg">
+                Start
+                <i class="fas fa-graduation-cap ml-2"></i>
+              </nuxt-link>
+            </div>
+            <!-- Content -->
+          </div>
+          <!-- Mask & flexbox options-->
+        </div>
+      </div>
+      <!--/Third slide-->
+    </div>
+    <!--/.Slides-->
+
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
   </div>
   <!--/.Carousel Wrapper-->
-  
-  
 </template>
 
 <script>
-
 export default {
- 
-};
+  computed: {
+    username() {
+      return this.$store.getters["auth/username"];
+    },
 
+  }
+};
 </script>
 
 <style>
-    
 </style>

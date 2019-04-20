@@ -48,6 +48,18 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "status": {
+      "default": "roleAccess",
+      "type": "enumeration",
+      "enum": [
+        "accessUser ",
+        "accessProfessor",
+        " accessAdmin"
+      ],
+      "enumName": "USER",
+      "required": true
     }
-  }
+  },
+  "collectionName": "users-permissions_user"
 }

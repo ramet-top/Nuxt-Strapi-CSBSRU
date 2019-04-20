@@ -4,5 +4,4 @@ export default function ({ store, redirect}) {
   //  return error({errorCode:503, message:'You are not allowed to see this'}),
   return redirect('/login')
   }
-
 }

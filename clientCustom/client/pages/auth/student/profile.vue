@@ -4,16 +4,16 @@
       <hr>
       <a href="#">
         <img
-        src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
-        alt="photo profile"
-        class="rounded-circle float-center mb-3"
-        height="160"
-        width="160"
-      >
+          src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
+          alt="photo profile"
+          class="rounded-circle float-center mb-3"
+          height="160"
+          width="160"
+        >
       </a>
-      
-   
-      <h4 class="grey-text">Hello : {{ username }}</h4><hr>
+
+      <h4 class="grey-text">Hello : {{ username }}</h4>
+      <hr>
       <!-- <nuxt-link class="btn btn-outline-danger btn-rounded waves-effect" to="#" role="button">
         Log out
         <i class="fas fa-sign-out-alt ml-2"></i>
@@ -63,6 +63,7 @@
       </div>
       <!--Modal: modalConfirmDelete-->
     </div>
+
     <ul class="nav nav-tabs nav-justified md-tabs mt-3" id="myTab" role="tablist">
       <li class="nav-item">
         <a
@@ -73,7 +74,10 @@
           role="tab"
           aria-controls="home"
           aria-selected="true"
-        >Home<i class="fab fa-accusoft ml-2"></i></a>
+        >
+          Home
+          <i class="fab fa-accusoft ml-2"></i>
+        </a>
       </li>
       <li class="nav-item">
         <a
@@ -98,9 +102,13 @@
           role="tab"
           aria-controls="contact"
           aria-selected="false"
-        >Manegement<i class="fas fa-file-signature ml-2"></i></a>
+        >
+          Manegement
+          <i class="fas fa-file-signature ml-2"></i>
+        </a>
       </li>
     </ul>
+    
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="card text-center">
@@ -376,7 +384,7 @@
 <script>
 import { mapMutations } from "vuex";
 export default {
-  middleware: "isAuth",
+  middleware: ['isAuth'],
   data() {
     return {
       active: false

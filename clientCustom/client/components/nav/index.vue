@@ -62,12 +62,12 @@
           <!--auth -->
           <li class="nav-item dropdown" v-if="username" >
               <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <i class="fas fa-user"></i> {{ username }} </a>
+                  <i class="fas fa-user"></i> account</a>
               <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                   <!-- <a class="dropdown-item waves-effect waves-light" href="#">My account</a> -->
-                  <nuxt-link to="/auth/profile" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-user-circle mr-2"></i>My account</nuxt-link> 
-                  <nuxt-link to="/auth/document" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-file-signature mr-2"></i>Document</nuxt-link> 
-                  <nuxt-link to="/auth/report" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-file-download mr-2"></i>Report & Download</nuxt-link>     
+                  <nuxt-link to="/auth/student/profile" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-user-circle mr-2"></i>My account</nuxt-link> 
+                  <nuxt-link to="/auth/student/document" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-file-signature mr-2"></i>Document</nuxt-link> 
+                  <nuxt-link to="/auth/student/report" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-file-download mr-2"></i>Report & Download</nuxt-link>     
 
                   <!-- <a class="dropdown-item waves-effect waves-light" href="#">Log out</a> -->
                   <a href="/" class="dropdown-item waves-effect waves-light" @click="logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a> 
@@ -91,6 +91,9 @@ export default {
    computed: {
     username() {
       return this.$store.getters["auth/username"];
+    },
+     user() {
+      return this.$store.state.auth.user
     }
   },
   methods: {
