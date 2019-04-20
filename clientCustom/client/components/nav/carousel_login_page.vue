@@ -130,7 +130,7 @@ export default {
         const response = await strapi.login(this.email, this.password);
         this.loading = false;
         this.setUser(response.user);
-        this.$router.replace("auth/profile");
+        this.$router.replace("/");
       } catch (err) {
         this.loading = false;
         alert(err.message || "An error occurred.");

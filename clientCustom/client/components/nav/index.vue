@@ -4,7 +4,7 @@
     <div class="container">
       <!-- Brand -->
       <a class="navbar-brand" href="/">
-       <i class="fas fa-graduation-cap mr-2"></i><strong>Computer science</strong>
+       <i class="fab fa-accusoft mr-2"></i><strong>Computer science</strong>
       </a>
 
       <!-- Collapse -->
@@ -65,12 +65,12 @@
                   <i class="fas fa-user"></i> {{ username }} </a>
               <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                   <!-- <a class="dropdown-item waves-effect waves-light" href="#">My account</a> -->
-                  <nuxt-link to="/auth/profile" class="dropdown-item waves-effect waves-light" tag="a">My account</nuxt-link> 
-                  <nuxt-link to="/auth/document" class="dropdown-item waves-effect waves-light" tag="a">Document</nuxt-link> 
-                  <nuxt-link to="/auth/report" class="dropdown-item waves-effect waves-light" tag="a">Report & Download</nuxt-link>     
+                  <nuxt-link to="/auth/profile" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-user-circle mr-2"></i>My account</nuxt-link> 
+                  <nuxt-link to="/auth/document" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-file-signature mr-2"></i>Document</nuxt-link> 
+                  <nuxt-link to="/auth/report" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-file-download mr-2"></i>Report & Download</nuxt-link>     
 
                   <!-- <a class="dropdown-item waves-effect waves-light" href="#">Log out</a> -->
-                  <a href="/" class="dropdown-item waves-effect waves-light" @click="logout">Logout</a> 
+                  <a href="/" class="dropdown-item waves-effect waves-light" @click="logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a> 
               </div>
           </li>
         </ul>
