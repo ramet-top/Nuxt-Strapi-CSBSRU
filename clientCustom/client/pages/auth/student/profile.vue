@@ -1,6 +1,7 @@
 <template>
   <div class="container mb-3">
-    <div class="text-center">
+    <div class="text-center grey-text">
+      For students
       <hr>
       <a href="#">
         <img

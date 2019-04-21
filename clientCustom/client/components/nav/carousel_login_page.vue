@@ -40,12 +40,14 @@
                         <div class="md-form">
                           <i class="fas fa-user prefix grey-text"></i>
                           <!-- <input type="text" id="form3" class="form-control"> -->
-                          <input
-                            id="email"
-                            v-model="email"
-                            type="email"
+                          
+                          <!-- use username or email login -->
+                          <input 
+                            id="identifier" 
+                            v-model="identifier"
+                            type="text"
                             autofocus="true"
-                            placeholder="Enter your email"
+                            placeholder="Enter your identifier"
                             required
                           >
                           <!-- <label for="form3">Your name</label> -->
@@ -118,7 +120,7 @@ import { mapMutations } from "vuex";
 export default {  
   data() {
     return {
-      email: "",
+      identifier:"", //use username or email login
       password: "",
       loading: false
     };
@@ -127,7 +129,7 @@ export default {
     async handleSubmit() {
       try {
         this.loading = true;
-        const response = await strapi.login(this.email, this.password);
+        const response = await strapi.login(this.identifier, this.password);
         this.loading = false;
         this.setUser(response.user);
         this.$router.replace("/");

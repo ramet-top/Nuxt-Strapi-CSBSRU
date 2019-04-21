@@ -581,7 +581,7 @@ type UploadFileGroupBy {
 }
 
 enum USER {
-  accessUser
+  accessStudent
   accessProfessor
   accessAdmin
 }

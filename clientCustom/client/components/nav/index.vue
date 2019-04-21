@@ -59,10 +59,10 @@
               <nuxt-link to="/login" class="nav-link border border-light rounded" tag="a"><i class="fab fa-500px mr-2"/>Login</nuxt-link>          
           </li>
 
-          <!--auth -->
-          <li class="nav-item dropdown" v-if="username" >
+          <!--if auth student-->
+          <li class="nav-item dropdown" v-if="((username) && (user.status == 'accessStudent'))" >
               <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <i class="fas fa-user"></i> account</a>
+                  <i class="fas fa-user"></i>account student</a>
               <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                   <!-- <a class="dropdown-item waves-effect waves-light" href="#">My account</a> -->
                   <nuxt-link to="/auth/student/profile" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-user-circle mr-2"></i>My account</nuxt-link> 
@@ -73,6 +73,22 @@
                   <a href="/" class="dropdown-item waves-effect waves-light" @click="logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a> 
               </div>
           </li>
+
+           <!--if auth professor-->
+          <li class="nav-item dropdown" v-else-if="((username) && (user.status == 'accessProfessor'))" >
+              <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <i class="fas fa-user"></i>account professor</a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                  <!-- <a class="dropdown-item waves-effect waves-light" href="#">My account</a> -->
+                  <nuxt-link to="/auth/professor/profile" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-user-circle mr-2"></i>My account</nuxt-link> 
+                  <nuxt-link to="/auth/professor/document" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-file-signature mr-2"></i>Document</nuxt-link> 
+                  <nuxt-link to="/auth/professor/report" class="dropdown-item waves-effect waves-light" tag="a"><i class="fas fa-file-download mr-2"></i>Report & Download</nuxt-link>     
+
+                  <!-- <a class="dropdown-item waves-effect waves-light" href="#">Log out</a> -->
+                  <a href="/" class="dropdown-item waves-effect waves-light" @click="logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a> 
+              </div>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -86,6 +102,7 @@ export default {
   data() {
     return {
       active: false
+     
     }
   },
    computed: {

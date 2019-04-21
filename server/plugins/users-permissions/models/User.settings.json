@@ -53,8 +53,8 @@
       "default": "roleAccess",
       "type": "enumeration",
       "enum": [
-        "accessUser ",
-        "accessProfessor",
+        "accessStudent",
+        " accessProfessor",
         " accessAdmin"
       ],
       "enumName": "USER",

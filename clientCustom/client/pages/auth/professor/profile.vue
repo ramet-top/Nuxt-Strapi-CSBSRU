@@ -1,7 +1,7 @@
 <template>
   <div class="container mb-3">
-    <div class="text-center">
-      page professor
+    <div class="text-center grey-text">
+      For teachers
       <hr>
       <a href="#">
         <img
@@ -109,7 +109,7 @@
         </a>
       </li>
     </ul>
-    
+
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="card text-center">
@@ -385,7 +385,7 @@
 <script>
 import { mapMutations } from "vuex";
 export default {
-  middleware: ['isAuth', 'checkStatus'],
+  middleware: ["isAuth"],
   data() {
     return {
       active: false
