@@ -1,3 +1,100 @@
+"""address model"""
+type Address {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  street: String
+  city: String
+  state: String
+  zip: String
+  county: String
+  country: String
+}
+
+type AddressAggregator {
+  count: Int
+}
+
+type AddressConnection {
+  values: [Address]
+  groupBy: AddressGroupBy
+  aggregate: AddressAggregator
+}
+
+type AddressConnection_id {
+  key: ID
+  connection: AddressConnection
+}
+
+type AddressConnectionCity {
+  key: String
+  connection: AddressConnection
+}
+
+type AddressConnectionCountry {
+  key: String
+  connection: AddressConnection
+}
+
+type AddressConnectionCounty {
+  key: String
+  connection: AddressConnection
+}
+
+type AddressConnectionCreatedAt {
+  key: DateTime
+  connection: AddressConnection
+}
+
+type AddressConnectionState {
+  key: String
+  connection: AddressConnection
+}
+
+type AddressConnectionStreet {
+  key: String
+  connection: AddressConnection
+}
+
+type AddressConnectionUpdatedAt {
+  key: DateTime
+  connection: AddressConnection
+}
+
+type AddressConnectionZip {
+  key: String
+  connection: AddressConnection
+}
+
+type AddressGroupBy {
+  _id: [AddressConnection_id]
+  createdAt: [AddressConnectionCreatedAt]
+  updatedAt: [AddressConnectionUpdatedAt]
+  street: [AddressConnectionStreet]
+  city: [AddressConnectionCity]
+  state: [AddressConnectionState]
+  zip: [AddressConnectionZip]
+  county: [AddressConnectionCounty]
+  country: [AddressConnectionCountry]
+}
+
+input AddressInput {
+  street: String
+  city: String
+  state: String
+  zip: String
+  county: String
+  country: String
+}
+
+input createAddressInput {
+  data: AddressInput
+}
+
+type createAddressPayload {
+  address: Address
+}
+
 input createDishInput {
   data: DishInput
 }
@@ -42,6 +139,14 @@ type createUserPayload {
 The `DateTime` scalar represents a date and time following the ISO 8601 standard
 """
 scalar DateTime
+
+input deleteAddressInput {
+  where: InputID
+}
+
+type deleteAddressPayload {
+  address: Address
+}
 
 input deleteDishInput {
   where: InputID
@@ -205,9 +310,12 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dish | createDishPayload | updateDishPayload | deleteDishPayload | DishConnection | DishAggregator | DishAggregatorSum | DishAggregatorAvg | DishAggregatorMin | DishAggregatorMax | DishGroupBy | DishConnection_id | DishConnectionCreatedAt | DishConnectionUpdatedAt | DishConnectionName | DishConnectionDescription | DishConnectionImage | DishConnectionPrice | DishConnectionRestaurant | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionCreatedAt | OrderConnectionUpdatedAt | OrderConnectionAddress | OrderConnectionCity | OrderConnectionDishes | OrderConnectionAmount | OrderConnectionPostalCode | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionCreatedAt | RestaurantConnectionUpdatedAt | RestaurantConnectionName | RestaurantConnectionDescription | RestaurantConnectionImage | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionStatus
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Address | createAddressPayload | updateAddressPayload | deleteAddressPayload | AddressConnection | AddressAggregator | AddressGroupBy | AddressConnection_id | AddressConnectionCreatedAt | AddressConnectionUpdatedAt | AddressConnectionStreet | AddressConnectionCity | AddressConnectionState | AddressConnectionZip | AddressConnectionCounty | AddressConnectionCountry | Dish | createDishPayload | updateDishPayload | deleteDishPayload | DishConnection | DishAggregator | DishAggregatorSum | DishAggregatorAvg | DishAggregatorMin | DishAggregatorMax | DishGroupBy | DishConnection_id | DishConnectionCreatedAt | DishConnectionUpdatedAt | DishConnectionName | DishConnectionDescription | DishConnectionImage | DishConnectionPrice | DishConnectionRestaurant | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionCreatedAt | OrderConnectionUpdatedAt | OrderConnectionAddress | OrderConnectionCity | OrderConnectionDishes | OrderConnectionAmount | OrderConnectionPostalCode | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionCreatedAt | RestaurantConnectionUpdatedAt | RestaurantConnectionName | RestaurantConnectionDescription | RestaurantConnectionImage | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionStatus | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionLevel
 
 type Mutation {
+  createAddress(input: createAddressInput): createAddressPayload
+  updateAddress(input: updateAddressInput): updateAddressPayload
+  deleteAddress(input: deleteAddressInput): deleteAddressPayload
   createDish(input: createDishInput): createDishPayload
   updateDish(input: updateDishInput): updateDishPayload
   deleteDish(input: deleteDishInput): deleteDishPayload
@@ -333,6 +441,9 @@ input OrderInput {
 }
 
 type Query {
+  address(id: ID!): Address
+  addresses(sort: String, limit: Int, start: Int, where: JSON): [Address]
+  addressesConnection(sort: String, limit: Int, start: Int, where: JSON): AddressConnection
   dish(id: ID!): Dish
   dishes(sort: String, limit: Int, start: Int, where: JSON): [Dish]
   dishesConnection(sort: String, limit: Int, start: Int, where: JSON): DishConnection
@@ -429,6 +540,15 @@ input RoleInput {
   type: String
   permissions: [ID]
   users: [ID]
+}
+
+input updateAddressInput {
+  where: InputID
+  data: AddressInput
+}
+
+type updateAddressPayload {
+  address: Address
 }
 
 input updateDishInput {
@@ -594,6 +714,10 @@ input UserInput {
   blocked: Boolean
   role: ID
   status: USER!
+  imgUri: [ID]
+  created_at: DateTime
+  updated_at: DateTime
+  level: String
 }
 
 type UsersPermissionsMe {
@@ -677,6 +801,10 @@ type UsersPermissionsUser {
   blocked: Boolean
   role: UsersPermissionsRole
   status: USER!
+  created_at: DateTime
+  updated_at: DateTime
+  level: String
+  imgUri(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
 }
 
 type UsersPermissionsUserAggregator {
@@ -704,7 +832,17 @@ type UsersPermissionsUserConnectionConfirmed {
   connection: UsersPermissionsUserConnection
 }
 
+type UsersPermissionsUserConnectionCreated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
 type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionLevel {
   key: String
   connection: UsersPermissionsUserConnection
 }
@@ -724,6 +862,11 @@ type UsersPermissionsUserConnectionStatus {
   connection: UsersPermissionsUserConnection
 }
 
+type UsersPermissionsUserConnectionUpdated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
 type UsersPermissionsUserConnectionUsername {
   key: String
   connection: UsersPermissionsUserConnection
@@ -738,4 +881,7 @@ type UsersPermissionsUserGroupBy {
   blocked: [UsersPermissionsUserConnectionBlocked]
   role: [UsersPermissionsUserConnectionRole]
   status: [UsersPermissionsUserConnectionStatus]
+  created_at: [UsersPermissionsUserConnectionCreated_at]
+  updated_at: [UsersPermissionsUserConnectionUpdated_at]
+  level: [UsersPermissionsUserConnectionLevel]
 }
